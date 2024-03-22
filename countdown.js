@@ -1,9 +1,11 @@
-function countDown(num){
-    for (let i = num - 1; i > 0; i--){
+function countDown(num) {
+    let i = num;
+    const countdownInterval = setInterval(() => {
         console.log(i);
-        if (i === 1){
+        i--;
+        if (i === 0) {
             console.log("Done!");
+            clearInterval(countdownInterval);
         }
-    }
+    }, 1000);
 }
-
